@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Accessibility</title>
+  	<link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav id="navbar">
+        <header class="main-header">Web Accessibility</header>
+        <ul class="main-nav">
+          <li><a href="#Introduction" class="nav-link">Introduction</a></li>
+          <li><a href="#Semantic_HTML_markup" class="nav-link">Semantic HTML markup</a></li>
+          <li><a href="#Using_clear_language" class="nav-link">Using clear language</a></li>
+          <li><a href="#Meaningful_text_labels" class="nav-link">Meaningful text labels</a></li>
+          <li><a href="#Form_labels" class="nav-link">Form labels</a></li>
+          <li><a href="#Text_alternatives" class="nav-link">Text alternatives</a></li>
+          <li><a href="#Color_and_color_contrast" class="nav-link">Color and color contrast</a></li>
+          <li><a href="#Reference" class="nav-link">Reference</a></li>
+        </ul>
+      </nav>
+      <main id="main-doc">
+        <section id="Introduction" class="main-section">
+          <header class="section-header">Introduction</header>
+          <article class="description">
+            <p>Learning some HTML, CSS, and JavaScript is useful if you want to become a web developer,
+              but your knowledge needs to go further than just using the technologies — you need to use them
+              responsibly so that you maximize the audience for your websites and don't lock anyone out of using them.
+              To achieve this, you need to adhere to general best practices, do cross browser testing, and consider
+              accessibility from the start.</p>
+          </article>
+        </section>
+        <section id="Semantic_HTML_markup" class="main-section">
+          <header class="section-header">Semantic HTML markup</header>
+          <article class="description">
+            <p>A great deal of web content can be made accessible just by making sure the correct HTML elements are used
+              for the correct purpose at all times.</p>
+            <p>Semantic HTML doesn't take longer to write than non-semantic (bad) markup if you do it consistently from
+              the start of your project, and it also has other benefits beyond accessibility:</p>
+            <ul>
+              <li>Easier to develop with — as mentioned above, you get some functionality for free, plus it is arguably
+                easier to understand.</li>
+              <li>Better on mobile — semantic HTML is arguably lighter in file size than non-semantic spaghetti code, and
+                easier to make responsive.</li>
+              <li>Good for SEO — search engines give more importance to keywords inside headings, links, etc., than keywords
+                included in non-semantic <code class="snippet">&lt;div&gt;</code>s, etc., so your documents will be more findable by customers.</li>
+            </ul>
+          </article>
+        </section>
+        <section id="Using_clear_language" class="main-section">
+          <header class="section-header">Using clear language</header>
+          <article class="description">
+            <p>The language you use can also affect accessibility. In general you should use clear language that is not
+              overly complex, and doesn't use unnecessary jargon or slang terms. This not only benefits people with cognitive
+              or other disabilities; it benefits readers for whom the text is not written in their first language, younger
+              people ... everyone in fact! Apart from this, you should try to avoid using language and characters that don't
+              get read out clearly by the screenreader. For example:</p>
+            <ul>
+              <li>Don't use dashes if you can avoid it. Instead of writing 5–7, write 5 to 7.</li>
+              <li>Expand abbreviations — instead of writing Jan, write January.</li>
+              <li>Expand acronyms, at least once or twice. Instead of writing HTML in the first instance, write Hypertext Markup Language.</li>
+            </ul>
+          </article>
+        </section>
+        <section id="Meaningful_text_labels" class="main-section">
+          <header class="section-header">Meaningful text labels</header>
+          <article class="description">
+            <p>UI control text labels are very useful to all users, but getting them right is particularly important to users
+              with disabilities.</p>
+            <p>You should make sure that your button and link text labels are understandable and distinctive. Don't just use
+              "Click here" for your labels, as screenreader users sometimes get up a list of buttons and form controls. The
+              following screenshot shows our controls being listed by VoiceOver on Mac.</p>
+            <p>Make sure your labels make sense out of context, read on their own, as well as in the context of the paragraph
+              they are in. For example, the following shows an example of good link text:</p>
+            <div class="code-block">
+            <pre><code>&lt;p&gt;</code><code>
+  Whales are really awesome creatures.</code><code>
+  &lt;a href="whales.html"&gt;Find out more about whales.&lt;/a&gt;</code><code>
+&lt;/p&gt;</code></pre>
+            </div>
+            <p>but this is bad link text:</p>
+            <div class="code-block">
+              <pre><code>&lt;p&gt;</code><code>
+  Whales are really awesome creatures. To find more out about whales,</code><code>
+  &lt;a href="whales.html"&gt;click here.&lt;/a&gt;</code><code>
+&lt;/p&gt;</code></pre>
+            </div>
+            <p>You can also see some good and bad examples at good-links.html and bad-links.html.</p>
+          </article>
+        </section>
+        <section id="Form_labels" class="main-section">
+          <header class="section-header">Form labels</header>
+          <article class="description">
+            <p>Form labels are also important, for giving you a clue what you need to enter into each form input. The following
+              seems like a reasonable enough example:</p>
+            <div class="code-block">
+              <pre><code>&lt;p&gt;Fill in your name:&lt;/p&gt;</code><code>
+&lt;input type="text" id="name" name="name"&gt;</code></pre>
+            </div>
+            <p>However, this is not so useful for disabled users. There is nothing in the above example to associate the label
+              unambiguously with the form input, and make it clear how to fill it in if you cannot see it. If you access this
+              with some screenreaders, you may only be given a description along the lines of "edit text".</p>
+            <p>The following is a much better example:</p>
+            <div class="code-block">
+              <pre><code class="code">&lt;div&gt;</code><code>
+  &lt;label for="name"&gt;Fill in your name:&lt;/label&gt;</code><code>
+  &lt;input type="text" id="name" name="name"&gt;</code>code>
+&lt;/div&gt;</code></pre>
+            </div>
+            <p>With the code like this, the label will be clearly associated with the input; the description will be more like
+              "Fill in your name: edit text".</p>
+            <p>As an added bonus, in most browsers associating a label with a form input means that you can click the label to
+              select/activate the form element. This gives the input a bigger hit area, making it easier to select.</p>
+          </article>
+        </section>
+        <section id="Text_alternatives" class="main-section">
+          <header class="section-header">Text alternatives</header>
+          <article class="description">
+            <p>Whereas textual content is inherently accessible, the same cannot necessarily be said for multimedia content —
+              image/video content cannot be seen by visually-impaired people, and audio content cannot be heard by hearing-impaired people.</p>
+            <p>We have a simple example written up, accessible-image.html, which features three copies of the same image:</p>
+            <div class="code-block">
+                <code class="code">&lt;img src="dinosaur.png"&gt;</code>
+            </div>
+            <p>The first image, when viewed by a screen reader, doesn't really offer the user much help — VoiceOver for example
+              reads out "/dinosaur.png, image". It reads out the filename to try to provide some help, but often files may be
+              uploaded with machine generated file names and these file names would likely provide no context to the image's
+              content.</p>
+            <div class="code-block">
+              <pre><code class="code">&lt;img src="dinosaur.png"
+     alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human,
+     with small arms, and a large head with lots of sharp teeth."&gt;</code></pre>
+            </div><p>When a screen reader encounters the second image, it reads out the full alt attribute — "A red
+              Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with
+              lots of sharp teeth.".</p>
+            <p>This highlights the importance of not only using meaningful file names in case so-called alt text is not
+              available, but also making sure that alt text is provided in alt attributes wherever possible. Note that the
+              contents of the alt attribute should always provide a direct representation of the image and what it conveys
+              visually. Any personal knowledge or extra description shouldn't be included here, as it is not useful for people
+              who have not come across the image before.</p>
+            <p>One thing to consider is whether your images have meaning inside your content, or whether they are purely for
+              visual decoration, so have no meaning. If they are decorational, it is better to just include them in the page
+              as CSS background images.</p>
+            <div class="code-block">
+              <pre><code class="code">&lt;img src="dinosaur.png"
+     alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human,
+     with small arms, and a large head with lots of sharp teeth."
+     title="The Mozilla red dinosaur"&gt;</code></pre>
+            </div>
+            <p>If you do want to provide extra contextual information, you should put it in the text surrounding the image, or
+              inside a title attribute, as shown above. In this case, most screenreaders will read out the alt text, the title
+              attribute, and the filename. In addition, browsers display title text as tooltips when moused over.</p>
+          </article>
+        </section>
+        <section id="Color_and_color_contrast" class="main-section">
+          <header class="section-header">Color and color contrast</header>
+          <article class="description">
+            <p>When choosing a color scheme for your website, make sure that the text (foreground) color contrasts well with the
+              background color. Your design might look cool, but it is no good if people with visual impairments like color
+              blindness can't read your content.</p>
+            <p>There is an easy way to check whether your contrast is large enough to not cause problems. There are a number
+              of contrast checking tools online that you can enter your foreground and background colors into, to check them.
+              For example WebAIM's Color Contrast Checker is simple to use, and provides an explanation of what you need to
+              conform to the WCAG criteria around color contrast.</p>
+          </article>
+        </section>
+        <section id="Reference" class="main-section">
+          <header class="section-header">Reference</header>
+          <article class="description">
+            <p>All the documentation on this page has been adapted from
+              <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility">MDN</a></p>
+            <p></p>
+          </article>
+        </section>
+      </main>
+    </div>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" type="text/javascript">
+    </script>
+  </body>
+</html>

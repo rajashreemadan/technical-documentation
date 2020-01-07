@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Courier+Prime&display=swap');
+
+/* =================================
+  Base Element Styles
+==================================== */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: #fff;
+	color: #1a1a1a;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1em;
+	font-weight: normal;
+	line-height: 1.6;
+}
+.wrapper {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+#navbar {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow: scroll;
+	height: 280px;
+	border-bottom: 2px solid #0a0a0a;
+}
+.main-header {
+	font-size: 2em;
+	text-align: center;
+	padding: .25em;
+	position: sticky;
+	top: 0;
+	width: 100%;
+	background: #fff;
+	color: #0a0a0a;
+	border-bottom: 2px solid #0a0a0a;
+}
+.main-nav {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	list-style: none;
+}
+a.nav-link {
+	display: block;
+	width: 100%;
+	border-bottom: 1px solid #000;
+	font-size: 1em;
+	text-decoration: none;
+	padding: .5em 2em .5em;
+	transition: .3s;
+	transition-property: color, background;
+}
+.main-nav a:link,
+.main-nav a:visited {
+	color: #000;
+}
+.main-nav a:hover,
+.main-nav a:focus {
+	background: #000;
+	color: #fff;
+}
+#main-doc {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.main-section {
+	font-size: 1em;
+	padding: 1em;
+}
+.section-header {
+	font-size: 2em;
+	padding-bottom: 1em;
+	padding-top: 1em;
+	line-height: 1em;
+	color: #0a0a0a;
+}
+.description p,
+.description ul {
+	font-size: 1em;
+	padding: .5em 1em;
+}
+.description ul {
+	padding-left: 2em;
+}
+.description li {
+	padding-bottom: 1em;
+}
+div.code-block {
+	background: #f2f2f2;
+	color: #212121;
+	padding: 1em;
+	margin: 1em 2em;
+}
+code {
+	font-family: 'Courier Prime', monospace;
+	font-size: .9em;
+	/* line-height: 1em; */
+}
+code.snippet {
+	background: #f2f2f2;
+	color: #212121;
+}
+
+/*  Media Querries */
+
+@media (min-width: 650px) {
+	.main-header,
+	a.nav-link,
+	.main-section {
+		padding-left: 3em;
+		padding-right: 3em;
+	}
+}
+@media (min-width: 700px) {
+	.main-header,
+	a.nav-link,
+	.main-section {
+		padding-left: 5em;
+		padding-right: 5em;
+	}
+}
+@media (min-width: 915px) {
+	.wrapper {
+		flex-direction: row;
+	}
+	#navbar {
+		width: 25%;
+		position: fixed;
+		border-bottom: none;
+		border-right: 1px solid #0a0a0a;
+		height: 100vh;
+		min-width: 250px;
+	}
+	.main-header {
+		padding: 1em;
+		text-align: left;
+		border-bottom: 1px solid #0a0a0a;
+		position: relative;
+	}
+	a.nav-link {
+		padding: 1em 2em 1em;
+	}
+	#main-doc {
+		width: 75%;
+		margin-left: 25%;
+		margin-top: 0;
+	}
+	.main-section {
+		padding: 1em 2em;
+	}
+}
